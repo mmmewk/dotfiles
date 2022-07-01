@@ -1,0 +1,23 @@
+[alias]
+    current = rev-parse --abbrev-ref HEAD
+    rename = branch -m
+    conf = ! nano ~/.gitconfig
+    save = ! git add . && git commit -m 'progress save'
+    last = show -s --format='%s'
+    uncommit = reset head^
+    recommit = ! git uncommit && git add . && git commit -m
+    reset-to-remote = ! git fetch origin && git reset --hard origin/$(git current)
+    reset-to-origin = ! git fetch origin && git reset --hard origin/$1
+    changes = diff --name-status origin/master
+    co-pr = ! git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1
+
+    # Fun commands
+    whats-up = status
+
+[user]
+    email = mmmewk@gmail.com
+    name = Matthew Koppe
+[pull]
+    rebase = false
+[init]
+    defaultBranch = main
