@@ -1,10 +1,13 @@
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-brew install fish
 yarn global add matts-dev-tools
 yarn global add jira-cl
 
-sed -i.bak s/JIRA_API_KEY/$JIRA_API_KEY/ ~/.jira-cli.json
-rm ~/.jira-cli.json.bak
-
-fish
+cat > .jira-cli.json <<EOL
+{
+  "protocol": "https",
+  "host": "loftium.atlassian.net",
+  "username": "matthew@loftium.com",
+  "password": "$JIRA_API_KEY",
+  "apiVersion": "2",
+  "strictSSL": true
+}
+EOL
