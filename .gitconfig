@@ -5,7 +5,6 @@
     save = ! git add . && git commit -m 'progress save'
     last = show -s --format='%s'
     uncommit = reset head^
-    recommit = ! git uncommit && git add . && git commit -m
     reset-to-remote = ! git fetch origin && git reset --hard origin/$(git current)
     reset-to-origin = ! git fetch origin && git reset --hard origin/$1
     changes = diff --name-status origin/master
@@ -13,6 +12,7 @@
 
     # Fun commands
     whats-up = status
+    pushup = push -u origin $(git current)
 
 [user]
     email = mmmewk@gmail.com
