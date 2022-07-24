@@ -1,18 +1,26 @@
 [alias]
+# shorthand
+    s = status
+    co = checkout
+    cm = ! git add . && git commit -m
+    conf = ! nano ~/.gitconfig
+
+    # utilities
     current = rev-parse --abbrev-ref HEAD
     rename = branch -m
-    conf = ! nano ~/.gitconfig
     save = ! git add . && git commit -m 'progress save'
     last = show -s --format='%s'
     uncommit = reset head^
     reset-to-remote = ! git fetch origin && git reset --hard origin/$(git current)
     reset-to-origin = ! git fetch origin && git reset --hard origin/$1
     changes = diff --name-status origin/master
-    co-pr = ! git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1
+    checkout-pr = ! git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1
+    amend = ! git add . && git commit --amend --reuse-message=HEAD
 
     # Fun commands
     whats-up = status
-    pushup = push -u origin $(git current)
+    pushup = push -u origin (git current)
+    me-up-there = push --force
 
 [user]
     email = mmmewk@gmail.com

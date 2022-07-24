@@ -1,7 +1,7 @@
-yarn global add matts-dev-tools
-yarn global add jira-cl
+npm install --location=global matts-dev-tools
+npm install --location=global jira-cl
 
-cat > .jira-cli.json <<EOL
+cat > ~/.jira-cli.json <<EOL
 {
   "protocol": "https",
   "host": "loftium.atlassian.net",
