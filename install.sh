@@ -11,3 +11,5 @@ cat > ~/.jira-cli.json <<EOL
   "strictSSL": true
 }
 EOL
+
+mv .gitconfig ~/.gitconfig

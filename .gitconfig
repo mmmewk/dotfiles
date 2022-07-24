@@ -1,9 +1,8 @@
 [alias]
-# shorthand
+    # shorthand
     s = status
     co = checkout
     cm = ! git add . && git commit -m
-    conf = ! nano ~/.gitconfig
 
     # utilities
     current = rev-parse --abbrev-ref HEAD
