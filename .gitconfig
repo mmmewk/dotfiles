@@ -17,7 +17,7 @@
 
     # Fun commands
     whats-up = status
-    pushup = push -u origin (git current)
+    pushup = ! git push -u origin $(git current)
     me-up-there = push --force
 
 [user]
