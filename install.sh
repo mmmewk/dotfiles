@@ -21,4 +21,4 @@ mv .config/* ~/.config
 sudo apt-get update
 sudo apt-get install -y fish
 
-chsh -s /usr/bin/fish
+echo fish >> ~/.bashrc
