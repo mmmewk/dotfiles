@@ -8,20 +8,6 @@ function ticket
     echo "https://loftium.atlassian.net/browse/$ticketnum"
 end
 
-function move-ticket
-    set -l ticketnum (ticketnum)
-
-    if set -q ticketnum[1]
-        jira issue $ticketnum --transition
-    else
-        echo 'No Ticket Found'
-    end
-end
-
-function rs
-    dr bundle exec rspec $argv
-end
-
 function srb-update
     dr ./sorbet/rbi-update.sh
 end

@@ -16,6 +16,7 @@ EOL
 # Copy dotfiles to home directory
 mv .gitconfig ~/.gitconfig
 mv .config/* ~/.config
+mv scripts ~/scripts
 
 # Install fish shell and set as default
 sudo apt-get update
