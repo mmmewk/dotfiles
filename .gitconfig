@@ -11,7 +11,6 @@
     last = show -s --format='%s'
     uncommit = reset head^
     reset-to-remote = ! git fetch origin && git reset --hard origin/$(git current)
-    reset-to-origin = ! git fetch origin && git reset --hard origin/$1
     changes = diff --name-status origin/master
     checkout-pr = ! git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1
     amend = ! git add . && git commit --amend --reuse-message=HEAD
@@ -25,6 +24,6 @@
     email = mmmewk@gmail.com
     name = Matthew Koppe
 [pull]
-    rebase = false
+    rebase = true
 [init]
     defaultBranch = main
