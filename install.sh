@@ -1,6 +1,5 @@
 # Copy dotfiles to home directory
 mv .gitconfig ~/.gitconfig
-mv .config/* ~/.config
 
 # Inject jira api token into dotfile
 cat > ~/.jira-cli.json <<EOL
@@ -14,11 +13,15 @@ cat > ~/.jira-cli.json <<EOL
 }
 EOL
 
-# Install fish shell and set as default
+# Install fish shell
 sudo apt-get update
 sudo apt-get install -y fish
 
+# HACK: Set fish as default shell by running when bash boots
 echo fish >> ~/.bashrc
+
+# Install fish functions
+mv .config/fish/* ~/.config/fish/
 
 # Install NPM packages for command line tools
 npm install --location=global matts-dev-tools
