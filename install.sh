@@ -18,8 +18,7 @@ mv .gitconfig ~/.gitconfig
 mv .config/* ~/.config
 
 # Install fish shell and set as default
-apt-get update
-sudo apt-get install fish
+sudo apt-get update
+sudo apt-get install -y fish
 
 chsh -s /usr/bin/fish
-fish
