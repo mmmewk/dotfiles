@@ -1,3 +1,4 @@
+# Install NPM packages for command line tools
 npm install --location=global matts-dev-tools
 npm install --location=global jira-cl
 
@@ -12,4 +13,13 @@ cat > ~/.jira-cli.json <<EOL
 }
 EOL
 
+# Copy dotfiles to home directory
 mv .gitconfig ~/.gitconfig
+mv .config/* ~/.config
+
+# Install fish shell and set as default
+apt-get update
+sudo apt-get install fish
+
+chsh -s /usr/bin/fish
+fish
