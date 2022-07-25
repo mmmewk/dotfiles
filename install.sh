@@ -1,7 +1,9 @@
-# Install NPM packages for command line tools
-npm install --location=global matts-dev-tools
-npm install --location=global jira-cl
+# Copy dotfiles to home directory
+mv .gitconfig ~/.gitconfig
+mv .config/* ~/.config
+mv scripts ~/scripts
 
+# Inject jira api token into dotfile
 cat > ~/.jira-cli.json <<EOL
 {
   "protocol": "https",
@@ -13,13 +15,12 @@ cat > ~/.jira-cli.json <<EOL
 }
 EOL
 
-# Copy dotfiles to home directory
-mv .gitconfig ~/.gitconfig
-mv .config/* ~/.config
-mv scripts ~/scripts
-
 # Install fish shell and set as default
 sudo apt-get update
 sudo apt-get install -y fish
 
 echo fish >> ~/.bashrc
+
+# Install NPM packages for command line tools
+npm install --location=global matts-dev-tools
+npm install --location=global jira-cl
