@@ -1,7 +1,6 @@
 # Copy dotfiles to home directory
 mv .gitconfig ~/.gitconfig
 mv .config/* ~/.config
-mv scripts ~/scripts
 
 # Inject jira api token into dotfile
 cat > ~/.jira-cli.json <<EOL

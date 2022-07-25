@@ -3,14 +3,6 @@ function gco
 end
 
 function gcm
-    if not test-lease-backend
-        return 1
-    end
-
-    gcm! $argv
-end
-
-function gcm!
     while [ (git last) = 'progress save' ]
         git uncommit
     end
@@ -28,19 +20,9 @@ function gs
 end
 
 function gpu
-    if test (git current) = "master"
-        if prompt "Are you sure you want to push to master?"
-            gpu!
-        end
-    else
-        gpu!
-    end
-end
-
-function gpu!
     git push -u origin (git current)
 end
 
-function gpu!!
+function gpu!
     git push -u --force origin (git current)
 end
