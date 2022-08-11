@@ -9,7 +9,7 @@
     rename = branch -m
     save = ! git add . && git commit -m 'progress save'
     last = show -s --format='%s'
-    uncommit = reset head^
+    uncommit = reset HEAD^
     reset-to-remote = ! git fetch origin && git reset --hard origin/$(git current)
     changes = diff --name-status origin/master
     checkout-pr = ! git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1

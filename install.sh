@@ -18,7 +18,7 @@ echo fish >> ~/.bashrc
 
 # Install fish functions
 touch ~/.config/fish/
-cp -r .config/fish ~/.config/
+cp -r .config/fish/* ~/.config/fish
 
 # Install NPM packages for command line tools
 npm install --location=global matts-dev-tools
