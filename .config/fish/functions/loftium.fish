@@ -8,6 +8,10 @@ function ticket
     echo "https://loftium.atlassian.net/browse/$ticketnum"
 end
 
+function console
+    CONSOLE_USER_EMAIL=matthew@loftium.com rails c
+end
+
 function srb-update
     dr ./sorbet/rbi-update.sh
 end
