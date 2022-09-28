@@ -13,9 +13,6 @@ cat > ~/.jira-cli.json <<EOL
 }
 EOL
 
-# HACK: Set fish as default shell by running when bash boots
-echo fish >> ~/.bashrc
-
 # Install NPM packages for command line tools
 npm install --location=global matts-dev-tools
 npm install --location=global jira-cl
