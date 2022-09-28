@@ -16,11 +16,11 @@ EOL
 # HACK: Set fish as default shell by running when bash boots
 echo fish >> ~/.bashrc
 
+# Install NPM packages for command line tools
+npm install --location=global matts-dev-tools
+npm install --location=global jira-cl
+
 # Install fish functions
 touch ~/.config/fish/
 cp -r .config/fish/* ~/.config/fish
 source ~/.config/fish/functions/reload-functions.fish
-
-# Install NPM packages for command line tools
-npm install --location=global matts-dev-tools
-npm install --location=global jira-cl
