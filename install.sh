@@ -23,4 +23,4 @@ npm install --location=global jira-cl
 # Install fish functions
 touch ~/.config/fish/
 cp -r .config/fish/* ~/.config/fish
-source ~/.config/fish/functions/reload-functions.fish
+fish ~/.config/fish/functions/reload-functions.fish
