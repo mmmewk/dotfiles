@@ -8,6 +8,6 @@ TRIMMED=$(echo $BRANCH_NAME | sed -e 's:^\([^-]*-[^-]*\)-.*:\1:' -e \
     'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/')
 
 # If it isn't excluded, preprend the trimmed branch identifier to the given message
-if [ -n "$TRIMMED" ]; then
+if [ -n "$TRIMMED" ] && [[ "$TRIMMED" =~ ^EN-[0-9]* ]]; then
   sed -i.bak -e "1s/^/[$TRIMMED] /" $1
 fi

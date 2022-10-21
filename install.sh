@@ -2,7 +2,7 @@
 cp .gitconfig ~/.gitconfig
 
 # Copy dotfiles to home directory
-cp prepare-commit-msg ~/.git-templates/hooks/prepare-commit-msg
+cp hooks/prepare-commit-msg /workspaces/lease-backend/.git/hooks/prepare-commit-msg
 
 # Inject jira api token into dotfile
 cat > ~/.jira-cli.json <<EOL
