@@ -1,0 +1,13 @@
+#!/bin/bash
+# Include any branches for which you wish to disable this script
+# Get the current branch name
+BRANCH_NAME=$(git symbolic-ref --short HEAD)
+
+# Trim it down to get the parts we're interested in
+TRIMMED=$(echo $BRANCH_NAME | sed -e 's:^\([^-]*-[^-]*\)-.*:\1:' -e \
+    'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/')
+
+# If it isn't excluded, preprend the trimmed branch identifier to the given message
+if [ -n "$TRIMMED" ]; then
+  sed -i.bak -e "1s/^/[$TRIMMED] /" $1
+fi

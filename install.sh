@@ -1,6 +1,9 @@
 # Copy dotfiles to home directory
 cp .gitconfig ~/.gitconfig
 
+# Copy dotfiles to home directory
+cp prepare-commit-msg ~/.git-templates/hooks/prepare-commit-msg
+
 # Inject jira api token into dotfile
 cat > ~/.jira-cli.json <<EOL
 {
@@ -20,4 +23,4 @@ npm install --location=global jira-cl
 # Install fish functions
 touch ~/.config/fish/
 cp -r .config/fish/* ~/.config/fish
-fish ~/.config/fish/functions/reload-functions.fish
+source ~/.config/fish/functions/reload-functions.fish
